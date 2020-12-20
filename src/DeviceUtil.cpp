@@ -1,6 +1,6 @@
 #include "DeviceUtil.h"
 #include <d3dcompiler.h>
-#include <d3dx11.h>
+#include "C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx11.h"
 #include <assert.h>
 #include "RenderMain.h"
 
@@ -153,7 +153,7 @@ ID3DBlob* DeviceUtil::createShader(const char* path, const char* entrypoint, con
 	{
 		if (errorMsg != NULL)
 		{
-			printf("%s", errorMsg->GetBufferPointer());
+			printf("%s", (const char*)errorMsg->GetBufferPointer());
 			errorMsg->Release();
 		}
 

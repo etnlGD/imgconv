@@ -1,6 +1,6 @@
 #include "RenderMain.h"
 #include "DeviceUtil.h"
-#include <d3dx11.h>
+#include "C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx11.h"
 
 using namespace std;
 
@@ -215,7 +215,7 @@ void renderToTexture()
 	g_context->PSSetConstantBuffers(0, 1, &g_renderResources.cb);
 	// [point/linear][clamp/wrap/mirror]
 	g_context->PSSetSamplers(0, SS_COUNT, g_renderResources.defaultSamplerStates);
-	g_context->PSSetShaderResources(0, g_renderResources.srvs.size(),
+	g_context->PSSetShaderResources(0, (UINT)g_renderResources.srvs.size(),
 									g_renderResources.srvs.empty() ? NULL : &g_renderResources.srvs[0]);
 	g_context->PSSetShader(g_renderResources.ps, NULL, 0);
 

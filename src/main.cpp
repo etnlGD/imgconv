@@ -1,8 +1,9 @@
 #include "RenderMain.h"
 #include "getopt.h"
-#include <d3dx11.h>
+#include <d3d11.h>
 #include <algorithm>
 #include <shlwapi.h>
+#include "C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx11.h"
 
 static void initD3D11Device()
 {
@@ -19,6 +20,11 @@ static void initD3D11Device()
 	D3D11CreateDevice(NULL, D3D_DRIVER_TYPE_HARDWARE, NULL, 0,
 					  levels, sizeof(levels) / sizeof(levels[0]), D3D11_SDK_VERSION,
 					  &g_device, &g_featureLevel, &g_context);
+
+// 	D3D11_FEATURE_DATA_SHADER_MIN_PRECISION_SUPPORT support;
+// 	g_device->CheckFeatureSupport(D3D11_FEATURE_SHADER_MIN_PRECISION_SUPPORT, 
+// 								  &support, sizeof(support));
+// 	printf("half support %d %d\n", support.PixelShaderMinPrecision, support.AllOtherShaderStagesMinPrecision);
 }
 
 struct FormatMapping 
